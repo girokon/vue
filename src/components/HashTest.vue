@@ -2,7 +2,7 @@
   <div>
     <div>
       <label for="source">Source</label>
-      <input name="source" id="source" v-model="source" />
+      <input name="source" id="source" v-model="source" /><button @click="randSource">rand</button>
       <pre>
           {{ result.b.toString(16) }} - {{ currentGroup.one }} {{
           maxHash >= result.b ? "ok" : "bad"
@@ -101,6 +101,9 @@ export default {
       stat.all = Object.keys(stat.groups);
 
       this.stat = stat;
+    },
+    randSource() {
+      this.source = makeIdFromTime();
     }
   }
 };
